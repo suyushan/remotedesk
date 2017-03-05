@@ -1,10 +1,12 @@
 #!/usr/bin/python
+# coding=utf-8
 # File Name: server.py
 
 from socket import *                    # get socket constructor and constants
 from threading import Thread, Lock
 
 def handleClient(connection):                    # in spawned thread: reply
+    #收到数据后在/home/devel/shadow文件里比对用户信息并反应
     mutex.acquire()
     while 1:
         data = connection.recv(1024)
@@ -34,8 +36,8 @@ if __name__ == '__main__':
     sockobj = socket(AF_INET, SOCK_STREAM)    # make a TCP socket object
     sockobj.bind(('', 54321))                 # bind it to server port number 
     sockobj.listen(5)                         # listen, allow 5 pending connects
-
-    mutex = Lock()
+    
+    mutex = Lock()                            # 创建线程
     while 1:                                      # wait for next connection,
         connection, address = sockobj.accept()    # pass to thread for service
         print 'Server connected by', address,

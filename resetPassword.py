@@ -6,6 +6,7 @@ from Tkinter import *             # get base widget set
 from inputs import Inputs
 
 class ResetPassword(Frame):
+    """重设密码类"""
     vars = []
     def __init__(self, parent=None):
         list = ('旧口令', '新口令', '重复新口令')

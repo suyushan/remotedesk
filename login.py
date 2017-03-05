@@ -9,6 +9,7 @@ from makeform import *
 from client import *
 
 def fetch(event):
+    """发送用户名与密码，从服务器取得数据，并进行处理"""
     x = ents.getlabels()
     user = x[0].get()
     pw = x[1].get()
@@ -28,6 +29,7 @@ def fetch(event):
         print remote
         os.system(remote)
 def resetpassword():
+    """重新设置密码"""
     head.config(text = '口令重置')
     win = Toplevel()
     win.title("Reset Password")

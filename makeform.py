@@ -7,6 +7,7 @@
 
 from Tkinter import *
 
+"""GUI程序，接收用户名和口令"""
 class MakeForm(Frame):
     vars = []
     def __init__(self, parent=None):

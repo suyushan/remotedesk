@@ -4,6 +4,8 @@
 
 from Tkinter import *
 
+
+"""GUI程序"""
 def printlabel(event):
     print inx.getlabel()
 
